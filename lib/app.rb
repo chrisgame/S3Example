@@ -3,8 +3,8 @@ require 'right_aws'
 require 'haml'
 
 class S3Test < Sinatra::Base
-  AWS_ACCESS_KEY = ''
-  AWS_SECRET_ACCESS_KEY = ''
+  AWS_ACCESS_KEY = 'AKIAI3HDDHE7NJ2HWRQA'
+  AWS_SECRET_ACCESS_KEY = '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'
   AWS_BUCKET = 'robbiebobbins'
 
   put '/' do
