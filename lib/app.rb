@@ -8,8 +8,11 @@ class S3Test < Sinatra::Base
   AWS_BUCKET = 'robbiebobbins'
 
   put '/' do
+    puts 'About to new bucket'
     s3 = RightAws::S3.new(AWS_ACCESS_KEY, AWS_SECRET_ACCESS_KEY)
+    puts 'assigning bobbins bucket'
     bobbins_bucket = s3.bucket(AWS_BUCKET)
+    puts 'about to make put request'
     bobbins_bucket.put('S3Test/test.jpg', request.body, 'public-read')
   end
 
