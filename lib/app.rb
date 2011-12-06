@@ -20,4 +20,5 @@ class S3Test < Sinatra::Base
     bobbins_bucket = s3.bucket(AWS_BUCKET)
     "Buckets on S3: #{bucket_names.join(', ')} Keys in robbiebobbins #{bobbins_bucket.keys.join(', ')}"
   end
+
 end

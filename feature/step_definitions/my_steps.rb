@@ -1,9 +1,8 @@
 require 'net/http'
 require 'rspec'
-require 'rest-client'
 
 Then /^i should be able to add an image to my bucket$/ do
-  uri = URI.parse 'http://localhost:4567'
+    uri = URI.parse 'http://sharp-sunrise-7465.heroku.com/'
   http = Net::HTTP.new(uri.host, uri.port)
 
   data = File.read "#{File.dirname(__FILE__)}/../../test_assets/test.jpeg"
@@ -16,7 +15,7 @@ Given /^The app is running$/ do
   puts "I'm just hoping it is at this stage"
 end
 When /^retrieve it$/ do
-  uri = URI.parse 'http://localhost:4567'
+  uri = URI.parse 'http://sharp-sunrise-7465.heroku.com/'
   http = Net::HTTP.new(uri.host, uri.port)
 
   response, body = http.get('/')
